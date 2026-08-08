@@ -20,7 +20,7 @@ make install
 
 WebSocket接続テスト
 ```
-src/curl -v wss://echo.websocket.org
+curl -v wss://echo.websocket.org
 ```
 ```
 * Received 101, Switching to WebSocket
@@ -29,7 +29,7 @@ src/curl -v wss://echo.websocket.org
 
 WebSocketデータ送信
 ```
-echo hello | src/curl -sS -T - wss://echo.websocket.org
+echo hello | curl -sS -T - wss://echo.websocket.org
 ```
 ```
 Request served by 4d896d95b55478hello
@@ -37,7 +37,7 @@ Request served by 4d896d95b55478hello
 
 MQTTパブリッシュ
 ```
-src/curl -u public:public -d hi mqtt://public.cloud.shiftr.io/nodered -v
+curl -u public:public -d hi mqtt://public.cloud.shiftr.io/nodered -v
 ```
 ```
 * Host public.cloud.shiftr.io:1883 was resolved.
@@ -56,7 +56,7 @@ src/curl -u public:public -d hi mqtt://public.cloud.shiftr.io/nodered -v
 
 MQTTサブスクライブ(受信すると停止してしまう)
 ```
-src/curl -sS -N -u public:public mqtt://public.cloud.shiftr.io/nodered
+curl -sS -N -u public:public mqtt://public.cloud.shiftr.io/nodered
 ```
 
 ```
@@ -74,7 +74,7 @@ Subject: curl smtp test
 
 hello
 EOF
-./src/curl -sS --url smtp://localhost:2525 --mail-from test@example.com --mail-rcpt node@localhost --upload-file /tmp/curl_smtp_message.txt
+curl -sS --url smtp://localhost:2525 --mail-from test@example.com --mail-rcpt node@localhost --upload-file /tmp/curl_smtp_message.txt
 ```
 
 # mosquiitoコマンド
