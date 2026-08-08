@@ -59,6 +59,25 @@ src/curl -sS -N -u public:public mqtt://public.cloud.shiftr.io/nodered
 ```
 
 ```
+curl -sS -N -T - ws://localhost:8000
+curl -sS -N -T - wss://localhost:8443
+curl -sS tftp://localhost
+curl -sS imap://node:password@localhost:2143/INBOX
+curl -sS pop3://node:password@localhost:2110
+curl -sS sftp://demo:password@localhost:2223/readme.txt
+
+cat <<'EOF' > /tmp/curl_smtp_message.txt
+From: test@example.com
+To: node@localhost
+Subject: curl smtp test
+
+hello
+EOF
+./src/curl -sS --url smtp://localhost:2525 --mail-from test@example.com --mail-rcpt node@localhost --upload-file /tmp/curl_smtp_message.txt
+```
+
+# mosquiitoコマンド
+```
 mosquitto_sub -h public.cloud.shiftr.io -u "public" -P "public" -t "nodered" -d
 
 mosquitto_pub -h public.cloud.shiftr.io -u "public" -P "public" -t "nodered" -m "Hello" -d
