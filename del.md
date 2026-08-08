@@ -1,4 +1,13 @@
 ```
+wget https://github.com/curl/curl/releases/download/curl-8_21_0/curl-8.21.0.tar.gz
+tar xzf curl-8.21.0.tar.gz
+cd curl-8.21.0
+./configure --with-openssl --without-libpsl
+make
+```
+
+
+```
 mosquitto_sub -h public.cloud.shiftr.io -u "public" -P "public" -t "nodered" -d
 
 mosquitto_pub -h public.cloud.shiftr.io -u "public" -P "public" -t "nodered" -m "Hello" -d
@@ -8,6 +17,3 @@ mosquitto_pub -h public.cloud.shiftr.io -u "public" -P "public" -t "nodered" -m 
 {"movement":{"alpha":-311.62,"beta":104.96,"gamma":62.21},"acceleration":{"x":-0.1,"y":0.09,"z":-0.04}}
 ```
 
-```
-
-```
