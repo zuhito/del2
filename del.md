@@ -7,7 +7,7 @@ cd curl-8.21.0
 make
 ```
 
-接続テスト
+WebSocket接続テスト
 ```
 src/curl -v wss://echo.websocket.org
 ```
@@ -16,12 +16,31 @@ src/curl -v wss://echo.websocket.org
 * [WS] Received 101, switch to WebSocket
 ```
 
-データ送信
+WebSocketデータ送信
 ```
 echo hello | src/curl -sS -T - wss://echo.websocket.org
 ```
 ```
 Request served by 4d896d95b55478hello
+```
+
+MQTTパブリッシュ
+```
+src/curl -u public:public -d hi mqtt://public.cloud.shiftr.io/nodered -v
+```
+```
+* Host public.cloud.shiftr.io:1883 was resolved.
+* IPv6: (none)
+* IPv4: 34.77.13.55
+*   Trying 34.77.13.55:1883...
+* Established connection to public.cloud.shiftr.io (34.77.13.55 port 1883) from 10.0.10.48 port 37464 
+* Using client id 'curlDdV1teQm'
+> (MQTT�<
+         curlDdV1teQmpublicpublicmqtt_doing: state [0]
+* mqtt_doing: state [0]
+<  mqtt_doing: state [2]
+< 0
+   noderedhi�shutting down connection #0
 ```
 
 ```
