@@ -7,3 +7,8 @@ mosquitto_pub -h public.cloud.shiftr.io -u "public" -P "public" -t "nodered" -m 
 {"movement":{"alpha":-311.62,"beta":104.88,"gamma":62.28},"acceleration":{"x":-0.12,"y":0.09,"z":-0.02}}
 {"movement":{"alpha":-311.62,"beta":104.96,"gamma":62.21},"acceleration":{"x":-0.1,"y":0.09,"z":-0.04}}
 ```
+
+```
+mosquitto_sub -V 5 -h public.cloud.shiftr.io -u "public" -P "public" -t "nodered" -q 1 --no-clean-session -i "nodered_client" -D connect session-expiry-interval 10
+
+```
