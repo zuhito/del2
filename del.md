@@ -1,3 +1,4 @@
+最新版curlのインストール
 ```
 wget https://github.com/curl/curl/releases/download/curl-8_21_0/curl-8.21.0.tar.gz
 tar xzf curl-8.21.0.tar.gz
@@ -6,6 +7,14 @@ cd curl-8.21.0
 make
 ```
 
+接続テスト
+```
+src/curl -v wss://echo.websocket.org
+```
+```
+* Received 101, Switching to WebSocket
+* [WS] Received 101, switch to WebSocket
+```
 
 ```
 mosquitto_sub -h public.cloud.shiftr.io -u "public" -P "public" -t "nodered" -d
