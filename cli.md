@@ -77,6 +77,11 @@ EOF
 curl -sS --url smtp://localhost:2525 --mail-from test@example.com --mail-rcpt node@localhost --upload-file /tmp/curl_smtp_message.txt
 ```
 
+# mosquiitoインストール
+```
+sudo apt-get install mosquitto-clients
+```
+
 # mosquiitoコマンド
 ```
 mosquitto_sub -h public.cloud.shiftr.io -u "public" -P "public" -t "nodered" -d
