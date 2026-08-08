@@ -16,6 +16,14 @@ src/curl -v wss://echo.websocket.org
 * [WS] Received 101, switch to WebSocket
 ```
 
+データ送信
+```
+echo hello | src/curl -sS -T - wss://echo.websocket.org
+```
+```
+Request served by 4d896d95b55478hello
+```
+
 ```
 mosquitto_sub -h public.cloud.shiftr.io -u "public" -P "public" -t "nodered" -d
 
