@@ -15,6 +15,7 @@ tar xzf curl-8.21.0.tar.gz
 cd curl-8.21.0
 ./configure --with-openssl --without-libpsl
 make
+make install
 ```
 
 WebSocket接続テスト
