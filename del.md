@@ -43,6 +43,11 @@ src/curl -u public:public -d hi mqtt://public.cloud.shiftr.io/nodered -v
    noderedhi�shutting down connection #0
 ```
 
+MQTTサブスクライブ(受信すると停止してしまう)
+```
+src/curl -sS -N -u public:public mqtt://public.cloud.shiftr.io/nodered
+```
+
 ```
 mosquitto_sub -h public.cloud.shiftr.io -u "public" -P "public" -t "nodered" -d
 
